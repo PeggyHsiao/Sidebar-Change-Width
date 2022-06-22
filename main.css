@@ -1,0 +1,48 @@
+body {
+    padding: 0;
+    margin: 0;
+}
+.container {
+    width: 100%;
+    min-height: 100vh;
+    height: 100%;
+    position: relative;
+}
+
+.nav {
+    width: 280px;
+    /* min-width: 200px;
+    max-width: 600px; */
+    border: 1px solid grey;
+    box-sizing: border-box;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.width__bar {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 277px;
+    width: 6px;
+    background: teal;
+    opacity: 0;
+    z-index: 999;
+}
+
+.width__bar:hover {
+    opacity: 1;
+    cursor: e-resize;
+}
+
+.section {
+    padding: 10px;
+    box-sizing: border-box;
+    position:absolute;
+    left: 280px;
+    right: 0;
+    height: 100vh;
+    overflow-y: auto;
+}
