@@ -14,20 +14,31 @@ bar.addEventListener("mousedown", (e) => {
     document.addEventListener("mousemove", move);
 });
 
-document.addEventListener("mouseup", (e) => {
+document.addEventListener("mouseup", up)
+
+function up() {
     isMouseDown = false;
     secOriPosition = parseInt(section.style.left.split('px')[0], 10);
 
     document.removeEventListener('mousemove',move)
-})
+}
 
 function move(e) {
     if(!isMouseDown) return;
 
-    offsetX = e.pageX - mouseX;
+    if(e.pageX >= 600 || e.pageX <= 200) {
+        const val = e.pageX >= 600 ? 600 : 200;
 
-    nav.style.width = e.pageX + "px";
-    bar.style.left = e.pageX - 3 + "px";
+        nav.style.width = val + "px";
+        bar.style.left = val - 4 + "px";
 
-    section.style.left = secOriPosition + offsetX + "px";
+        section.style.left = val + "px";
+    } else {
+        offsetX = e.pageX - mouseX;
+
+        nav.style.width = e.pageX + "px";
+        bar.style.left = e.pageX - 4 + "px";
+    
+        section.style.left = secOriPosition + offsetX + "px";
+    }
 }
