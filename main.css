@@ -19,6 +19,8 @@ body {
     top: 0;
     bottom: 0;
     left: 0;
+    overflow-x: auto;
+    text-overflow: ellipsis; 
 }
 
 .width__bar {
@@ -38,11 +40,16 @@ body {
 }
 
 .section {
-    padding: 10px 50px 10px 70px;
+    padding: 10px 40px;
     box-sizing: border-box;
     position:absolute;
     left: 280px;
     right: 0;
     height: 100vh;
     overflow-y: auto;
+}
+
+/* tree */
+.jstree-themeicon-custom {
+    background-size: cover !important;
 }

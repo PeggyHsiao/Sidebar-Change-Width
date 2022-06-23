@@ -42,3 +42,6 @@ function move(e) {
         section.style.left = secOriPosition + offsetX + "px";
     }
 }
+
+    
+
